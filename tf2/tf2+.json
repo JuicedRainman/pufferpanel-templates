@@ -1,0 +1,52 @@
+{
+    "type": "srcds",
+    "display": "Team Fortress 2",
+    "data": {
+      "map": {
+        "value": "ctf_2fort",
+        "required": true,
+        "desc": "TF2 Map",
+        "display": "Team Fortess 2 Map to load",
+        "internal": false
+      },
+      "ip": {
+        "value": "0.0.0.0",
+        "required": true,
+        "desc": "What IP to bind the server to",
+        "display": "IP",
+        "internal": false
+      },
+      "port": {
+        "value": "27015",
+        "required": true,
+        "desc": "What port to bind the server to",
+        "display": "Port",
+        "internal": false,
+        "type": "integer"
+      },
+      "hltv": {
+      "value": "",
+      "required": false,
+      "desc": "Disables HLTV (Half-Life TV) support. set to -nohltv to turn it off.",
+      "display": "HLTV",
+      "internal": false
+      }
+    },
+    "install": [
+      {
+        "type": "steamgamedl",
+        "appId": "232250"
+      }
+    ],
+    "run": {
+      "command": "./srcds_run +ip ${ip} +port ${port} -game tf {hltv} -console +map ${map} -norestart",
+      "stop": "exit"
+    },
+    "environment": {
+      "type": "tty"
+    },
+    "requirements": {
+      "os": "linux",
+      "arch": "amd64"
+    }
+  }

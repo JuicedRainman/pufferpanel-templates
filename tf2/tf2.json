@@ -23,13 +23,6 @@
       "display": "Port",
       "internal": false,
       "type": "integer"
-    },
-    "hltv": {
-    "value": "",
-    "required": false,
-    "desc": "Disables HLTV (Half-Life TV) support. set to -nohltv to turn it off.",
-    "display": "HLTV",
-    "internal": false
     }
   },
   "install": [
@@ -39,7 +32,7 @@
     }
   ],
   "run": {
-    "command": "./srcds_run +ip ${ip} +port ${port} -game tf {hltv} -console +map ${map} -norestart",
+    "command": "./srcds_run +ip ${ip} +port ${port} -game tf -console +map ${map} -norestart",
     "stop": "exit"
   },
   "environment": {
